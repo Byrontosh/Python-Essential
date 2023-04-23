@@ -1,8 +1,0 @@
-print("Suma",5+5)
-print("Resta",5-5)
-print("Multiplicación",5*5)
-print("División",5/5)
-print("División  parte entera",5//5)
-print("Exponente",5**5)
-print("Módulo",5%5)
-print("Ejercicio - Operadores matemáticos")
