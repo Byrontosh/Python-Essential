@@ -10,6 +10,7 @@ def isYearLeap(year):
   else:
       return False
 
+
 def daysInMonth(year, month):
   months =["Enero", "Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre"]
   
@@ -44,16 +45,27 @@ def daysInMonth(year, month):
     return None
 
 
-testYears = [1900, 2000, 2016, 1987]
-testMonths = [2, 2, 1, 11]
-testResults = [28, 29, 31, 30]
+def dayOfYear(year, month, day):
+  if ( 1 <= month <= 12 ) and (1 <= day <=31) and (1<=len(str(year))<=4):
+    if isYearLeap(year) and daysInMonth(year,month) == day:
+      return f'Days of the year {year} is 366, because it\'s a leap year'
+    elif isYearLeap(year) and daysInMonth(year,month) != day:
+      return None
+    else:
+      return f'Days of the year {year} is 365, because isn\'t a leap year'
+  else:
+    return None
 
-for i in range(len(testYears)):
-	yr = testYears[i]
-	mo = testMonths[i]
-	print(yr, mo, "->", end="")
-	result = daysInMonth(yr, mo)
-	if result == testResults[i]:
-		print("OK")
-	else:
-		print("Failed")
+
+print(dayOfYear(2000, 2, 29))
+print()
+print(dayOfYear(2023, 12, 31))
+print()
+print(dayOfYear(2012, 2, 29))
+print()
+print(dayOfYear(2012, 2, 28))
+
+
+
+
+
